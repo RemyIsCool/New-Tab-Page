@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>New Tab</title>
+	<style>
+		body {
+			margin: 0;
+			color: #ddc7a1;
+			font-family: "JetBrainsMono Nerd Font";
+			background-color: #282828;
+		}
+
+		.center {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			max-width: 30rem;
+			margin-inline: auto;
+			margin-top: 30vh;
+		}
+
+		.title {
+			font-size: 4rem;
+			font-weight: 900;
+			margin-bottom: 1.5rem;
+			text-align: center;
+		}
+
+		.search {
+			border-radius: 99999px;
+			border: none;
+			padding-block: 0.75rem;
+			padding-inline: 1rem;
+			background-color: #32302f;
+			color: #928374;
+			font-size: 1.2rem;
+			font-family: monospace;
+			margin-bottom: 1rem;
+
+			&:focus {
+				outline: 2px solid #928374;
+			}
+		}
+
+		.bookmarks {
+			display: flex;
+			gap: 5rem;
+			margin-right: 1.5rem;
+		}
+
+		.bookmark {
+			font-size: 5rem;
+			text-decoration: none;
+			transition: 0.25s opacity ease;
+
+			&:hover {
+				opacity: 0.5;
+			}
+
+			&.youtube {
+				color: #ea6962;
+			}
+
+			&.reddit {
+				color: #e78a4e;
+			}
+
+			&.github {
+				color: #d8a657;
+			}
+
+			&.office {
+				color: #a9b665;
+				j
+			}
+	</style>
+	<script>
+		function searchWithStartpage(event) {
+			if (event.key === "Enter" && event.target.value !== "") {
+				window.location = "https://www.startpage.com/sp/search?query=" + event.target.value
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div class="center">
+		<h1 class="title">Welcome!</h1>
+		<input class="search" type="text" placeholder="Search with Startpage" onkeypress="searchWithStartpage(event)">
+		<div class="bookmarks">
+			<a class="bookmark youtube" href="https://www.youtube.com"></a>
+			<a class="bookmark reddit" href="https://www.reddit.com"></a>
+			<a class="bookmark github" href="https://github.com"></a>
+			<a class="bookmark office" href="https://www.office.com">󰏆</a>
+		</div>
+	</div>
+</body>
+
+</html>
